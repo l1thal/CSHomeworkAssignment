@@ -1,0 +1,37 @@
+Please pick 3 of the following 9 assignments.
+
+7.6, 7.16, 7,20, 7,21`, 7.22, 7.28, 7.29, 7.31, or 7.35.
+
+For each problem, identify who is going to be the lead programmer for the main methods, who is going to write some of the custom methods, and who is going to write the report about the code. Each person on the team should get to be the lead on one of the three problems.
+
+ 
+
+A different option is the code off option. All three of you do the same problem. Whoever gets done first wins. Then the other two have to tie their work in to the winner's code.  The winner gets to pick the second and third problem for the second and third place to go and work on.
+
+ 
+
+Each individual should turn in their individual report.
+
+Their report should include a graphic showing how GitHub has been used.
+
+60 points: Taking the lead on one problem.
+
+20 for outline, 20 for use of comments, 20 for console output.
+
+60 points: Writing a report for one problem.
+
+20 for title and introduction
+
+20 for discussion
+
+20 for explanation of how the team did the different work.
+
+60 points: Activity inside github.
+
+20 points for how you used github
+
+20 points for your branches
+
+20 points for your commit messages.
+
+20 points: Reflection on the team effort (What worked well, what did not work, what to do different next time.)
