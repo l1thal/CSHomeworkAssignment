@@ -1,0 +1,78 @@
+*7.6 (Revise Listing 5.15, PrimeNumber.java) Listing 5.15 determines whether a number
+n is prime by checking whether 2, 3, 4, 5, 6, . . . , n/2 is a divisor. If a divisor
+is found, n is not prime. A more efficient approach is to check whether any of the
+prime numbers less than or equal to 2n can divide n evenly. If not, n is prime.
+Rewrite Listing 5.15 to display the first 50 prime numbers using this approach.
+You need to use an array to store the prime numbers and later use them to check
+whether they are possible divisors for n.
+
+7.16 (Execution time) Write a program that randomly generates an array of 100,000
+integers and a key. Estimate the execution time of invoking the linearSearch
+method in Listing 7.6. Sort the array and estimate the execution time of invoking
+the binarySearch method in Listing 7.7. You can use the following code
+template to obtain the execution time:
+long startTime = System.currentTimeMillis();
+perform the task;
+long endTime = System.currentTimeMillis();
+long executionTime = endTime - startTime;
+
+*7.20 (Revise selection sort) In Section 7.11, you used selection sort to sort an array.
+The selection-sort method repeatedly finds the smallest number in the current
+array and swaps it with the first. Rewrite this program by finding the largest number
+and swapping it with the last. Write a test program that reads in ten double
+numbers, invokes the method, and displays the sorted numbers.
+
+***7.21 (Game: bean machine) The bean machine, also known as a quincunx or the Galton
+box, is a device for statistics experiments named after English scientist Sir
+Francis Galton. It consists of an upright board with evenly spaced nails (or pegs)
+in a triangular form, as shown in Figure 7.13
+
+***7.22 (Game: Eight Queens) The classic Eight Queens puzzle is to place eight queens
+on a chessboard such that no two queens can attack each other (i.e., no two queens
+are on the same row, same column, or same diagonal). There are many possible
+solutions. Write a program that displays one such solution. A sample output is
+shown below:
+
+*7.28 (Math: combinations) Write a program that prompts the user to enter 10 integers
+and displays all combinations of picking two numbers from the 10.
+
+*7.29 (Game: pick four cards) Write a program that picks four cards from a deck of 52
+cards and computes their sum. An Ace, King, Queen, and Jack represent 1, 13,
+12, and 11, respectively. Your program should display the number of picks that
+yields the sum of 24.
+
+**7.31 (Merge two sorted lists) Write the following method that merges two sorted lists
+into a new sorted list.
+public static int[] merge(int[] list1, int[] list2)
+Implement the method in a way that takes at most list1.length + list2.
+length comparisons. Write a test program that prompts the user to enter two
+sorted lists and displays the merged list. Here is a sample run. Note that the first
+number in the input indicates the number of the elements in the list. This number
+is not part of the list.
+
+***7.35 (Game: hangman) Write a hangman game that randomly generates a word and
+prompts the user to guess one letter at a time, as shown in the sample run. Each
+letter in the word is displayed as an asterisk. When the user makes a correct
+guess, the actual letter is then displayed. When the user finishes a word, display
+the number of misses and ask the user whether to continue to play with another
+word. Declare an array to store words, as follows:
+// Add any words you wish in this array
+String[] words = {"write", "that", ...};
+
+!!! NOT SURE IF THIS IS PART OF THE PROBLEM !!!
+ vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+
+(Guess) Enter a letter in word ******* > p
+(Guess) Enter a letter in word p****** > r
+(Guess) Enter a letter in word pr**r** > p
+p is already in the word
+(Guess) Enter a letter in word pr**r** > o
+(Guess) Enter a letter in word pro*r** > g
+(Guess) Enter a letter in word progr** > n
+n is not in the word
+(Guess) Enter a letter in word progr** > m
+(Guess) Enter a letter in word progr*m > a
+The word is program. You missed 1 time
+Do you want to guess another word? Enter y or n>
+Programming Exercises 285
+
