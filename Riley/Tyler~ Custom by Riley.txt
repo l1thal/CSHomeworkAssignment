@@ -1,0 +1,36 @@
+import java.util.*;
+public class Practice {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int[] integers = null;
+
+		System.out.println("Enter ten integers: ");
+		combo(integers);	
+	}
+	//custom method for the program
+	public static int combo(int[]array){
+		// there are ten integers to be input, so create an array of 10 ints
+		int[] integers = new int[10];
+		Scanner input = new Scanner(System.in);
+		// user inputs the ten ints
+		for (int i = 0; i < 10; i++){
+			integers[i] = input.nextInt();
+		}
+		System.out.println("All combinations of picking two numbers from the " 
+				+ "list are: ");
+	
+		// first number is the ten ints
+		for (int i = 0; i < 10; i++){
+			// second number is the ten ints, for each of the first ten ints
+			for (int j = 0; j < 10; j++){
+				System.out.print(integers[i] + " and " 
+						+ integers[j] + ", ");
+			}
+			System.out.println();
+		
+		}
+		return 0;
+	}
+}
