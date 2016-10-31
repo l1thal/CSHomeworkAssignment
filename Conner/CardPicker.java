@@ -1,74 +1,75 @@
+// Importing necessary utilities for this program.
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.stream.*;
 
 public class CardPicker {
 	
-	static int cardOne;
-	static int cardTwo;
-	static int cardThree;
-	static int cardFour;
+	// Pre-Defining necessary variables.
+	static int[] Cards;
+	static String[] cardsDefined;
+	static int[] cardsValued;
 	static int undefinedCard;
 	static String definedCard;
 	static int cardValue;
 
 		public static void main(String[] args) {
 			
-			// The Problem 
+			// Defining necessary memory space for this array.
+			Cards = new int[4];
 			
-			/**7.29 (Game: pick four cards) Write a program that picks four cards from a deck of 52
-			cards and computes their sum. An Ace, King, Queen, and Jack represent 1, 13,
-			12, and 11, respectively. Your program should display the number of picks that
-			yields the sum of 24.
-			*/
-			
+			// Assigning "cards" (integer values) to this array.
 			for (int i = 0; i < 4; i++) {
-				int CardNumber = CardsPicker();
-				if (i == 0) {
-					cardOne = CardNumber;
-				} else if (i == 1) {
-					cardTwo = CardNumber;
-				} else if (i == 2) {
-					cardThree = CardNumber;
-				} else if (i == 3) {
-					cardFour = CardNumber;
-				}
+				Cards[i] = CardsPicker();
 			}
 			
-			String cardOneDefined = Definer(cardOne);
-			String cardTwoDefined = Definer(cardTwo);
-			String cardThreeDefined = Definer(cardThree);
-			String cardFourDefined = Definer(cardFour);
+			// Informing the user of the randomly generated integer values that were entered into the array.
+			System.out.format("Your numbers are: %d, %d, %d, and %d.\n\n", Cards[0], Cards[1], Cards[2], Cards[3]);
 			
-			int cardOneValue = CardValuer(cardOne);
-			int cardTwoValue = CardValuer(cardTwo);
-			int cardThreeValue = CardValuer(cardThree);
-			int cardFourValue = CardValuer(cardFour);
+			// Defining necessary memory space for this array.
+			cardsDefined = new String[4];
 			
-			int totalCardsValue = (cardOneValue + cardTwoValue + cardThreeValue + cardFourValue);
+			// Assigning names for the card numbers (that were gathered and put within the previous array) and putting the names into this array.
+			for (int i = 0; i < 4; i++) {
+				cardsDefined[i] = Definer(Cards[i]);
+			}
 			
-			System.out.format("Your numbers are: %d, %d, %d, and %d.\n\n", cardOne, cardTwo, cardThree, cardFour);
+			// Informing the user of the names of the cards that were randomly generated.
+			System.out.println("Your First card is:  The " + cardsDefined[0]);
+			System.out.println("Your Second card is: The " + cardsDefined[1]);
+			System.out.println("Your Third card is:  The " + cardsDefined[2]);
+			System.out.println("Your Fourth card is: The " + cardsDefined[3] + "\n");
 			
-			System.out.println("Your First card is:  " + cardOneDefined);
-			System.out.println("Your Second card is: " + cardTwoDefined);
-			System.out.println("Your Third card is:  " + cardThreeDefined);
-			System.out.println("Your Fourth card is: " + cardFourDefined + "\n");
+			// Defining necessary memory space for this array.
+			cardsValued = new int[4];
 			
-			System.out.println("The value of your First card is:  " + cardOneValue);
-			System.out.println("The value of your Second card is: " + cardTwoValue);
-			System.out.println("The value of your Third card is:  " + cardThreeValue);
-			System.out.println("The value of your Fourth card is: " + cardFourValue + "\n");
+			// Giving a value of 1 - 13 to the cards chosen in the first array, depending on their ranking in poker. (except the Aces beating all other cards as a high-card as a number).
+			for (int i = 0; i < 4; i++) {
+				cardsValued[i] = CardValuer(Cards[i]);
+			}
 			
-			System.out.println("The total value of all of your cards is: " + totalCardsValue);
-
+			// Informing the user of the values of the randomly generated cards.
+			System.out.println("The value of your First card is:  " + cardsValued[0]);
+			System.out.println("The value of your Second card is: " + cardsValued[1]);
+			System.out.println("The value of your Third card is:  " + cardsValued[2]);
+			System.out.println("The value of your Fourth card is: " + cardsValued[3] + "\n");
+			
+			// Adding all of the card values up.
+			int totalCardsValue = IntStream.of(cardsValued).sum();
+			
+			// Informing the user of the total value of all of the cards combined.
+			System.out.println("The total value of all your cards is: " + totalCardsValue);
+			
 		}
 		
 		// This function picks four random cards.
 		public static int CardsPicker() {
 			
-			int test = ThreadLocalRandom.current().nextInt(1, 52 + 1);
-			return test;
+			int Number = ThreadLocalRandom.current().nextInt(1, 52 + 1);
+			return Number;
 			
 		}
 		
+		// This function initiates another function that gives the randomly generated cards string names.
 		public static String Definer(int cardToDefine) {
 			
 			String definedCard = CardDefiner(cardToDefine);
@@ -76,6 +77,7 @@ public class CardPicker {
 			
 		}
 		
+		// This function defines string names of the cards that were randomly generated.
 		public static String CardDefiner(int Number) {
 			
 			if (Number == 1) {
@@ -112,7 +114,7 @@ public class CardPicker {
 				definedCard = "Four of Spades";
 				return definedCard;
 			} else if (Number == 12) {
-				definedCard = "Three of Spaces";
+				definedCard = "Three of Spades";
 				return definedCard;
 			} else if (Number == 13) {
 				definedCard = "Two of Spades";
@@ -238,6 +240,7 @@ public class CardPicker {
 			return definedCard;
 		}
 
+		// This function gives the randomly generated cards alternate values.
 		public static int CardValuer(int Number) {
 			
 			if (Number == 1) {
